@@ -1,0 +1,222 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Health & Wellness Design System - Professional medical aesthetic with trust-building colors */
+
+@layer base {
+  :root {
+    /* Core health website colors */
+    --background: 0 0% 100%;
+    --foreground: 210 24% 16%;
+    
+    /* Medical primary - trustworthy blue */
+    --medical-primary: 210 100% 56%;
+    --medical-primary-foreground: 0 0% 100%;
+    
+    /* Health secondary - calming green */  
+    --health-secondary: 142 70% 45%;
+    --health-secondary-foreground: 0 0% 100%;
+    
+    /* Trust accent - soft teal */
+    --trust-accent: 180 65% 55%;
+    --trust-accent-foreground: 0 0% 100%;
+    
+    /* Professional health backgrounds */
+    --health-light: 210 20% 98%;
+    --health-lighter: 200 25% 95%;
+    --health-muted: 210 15% 85%;
+    
+    /* Status colors for medical content */
+    --warning-health: 42 100% 55%;
+    --warning-health-foreground: 0 0% 100%;
+    --emergency-red: 0 85% 60%;
+    --emergency-red-foreground: 0 0% 100%;
+    --success-health: 142 70% 45%;
+    --success-health-foreground: 0 0% 100%;
+
+    /* Core shadcn variables updated for health theme */
+    --card: 0 0% 100%;
+    --card-foreground: 210 24% 16%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 210 24% 16%;
+
+    --primary: 210 100% 56%; /* medical-primary */
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 210 20% 98%; /* health-light */
+    --secondary-foreground: 210 24% 16%;
+
+    --muted: 200 25% 95%; /* health-lighter */
+    --muted-foreground: 210 15% 45%;
+
+    --accent: 180 65% 55%; /* trust-accent */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 85% 60%; /* emergency-red */
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 210 15% 85%; /* health-muted */
+    --input: 210 15% 85%;
+    --ring: 210 100% 56%; /* medical-primary */
+
+    --radius: 0.75rem; /* Slightly more rounded for friendly medical feel */
+
+    /* Gradients for hero sections */
+    --gradient-health-hero: linear-gradient(135deg, hsl(210 100% 56%), hsl(180 65% 55%));
+    --gradient-health-subtle: linear-gradient(180deg, hsl(210 20% 98%), hsl(200 25% 95%));
+
+    /* Shadows for trust and depth */
+    --shadow-health-card: 0 4px 20px -4px hsl(210 100% 56% / 0.1);
+    --shadow-health-hover: 0 8px 30px -8px hsl(210 100% 56% / 0.15);
+
+    /* Sidebar variables (keeping existing) */
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 4.9%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 4.9%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 212.7 26.8% 83.9%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter antialiased;
+  }
+
+  /* Health-specific typography */
+  .medical-disclaimer {
+    @apply text-sm text-muted-foreground italic;
+  }
+
+  .health-gradient-text {
+    @apply bg-gradient-to-r from-primary to-accent bg-clip-text text-transparent;
+  }
+  
+  /* Animation delays for staggered effects */
+  .animation-delay-1000 {
+    animation-delay: 1s;
+  }
+  
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+  
+  .animation-delay-3000 {
+    animation-delay: 3s;
+  }
+
+  /* Trust signals */
+  .trust-badge {
+    @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-secondary text-secondary-foreground;
+  }
+
+  /* Medical status indicators */
+  .status-warning {
+    @apply bg-warning-health text-warning-health-foreground;
+  }
+  
+  .status-emergency {
+    @apply bg-emergency-red text-emergency-red-foreground;
+  }
+  
+  .status-success {
+    @apply bg-success-health text-success-health-foreground;
+  }
+}
+
+@layer components {
+  /* Health card variants */
+  .health-card {
+    @apply bg-card border rounded-lg p-6 shadow-[var(--shadow-health-card)] 
+           hover:shadow-[var(--shadow-health-hover)] transition-all duration-300;
+  }
+
+  .health-card-feature {
+    @apply health-card hover:scale-[1.02] cursor-pointer;
+  }
+
+  /* Medical content styling */
+  .medical-content h1 {
+    @apply text-3xl font-bold text-foreground mb-4;
+  }
+  
+  .medical-content h2 {
+    @apply text-2xl font-semibold text-foreground mb-3 mt-6;
+  }
+  
+  .medical-content h3 {
+    @apply text-xl font-medium text-foreground mb-2 mt-4;
+  }
+  
+  .medical-content p {
+    @apply text-foreground mb-4 leading-relaxed;
+  }
+
+  .medical-content ul {
+    @apply list-disc list-inside space-y-2 mb-4 text-foreground;
+  }
+
+  /* Hero gradients */
+  .hero-gradient {
+    background: var(--gradient-health-hero);
+  }
+  
+  .subtle-gradient {
+    background: var(--gradient-health-subtle);
+  }
+}

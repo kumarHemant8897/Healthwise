@@ -1,0 +1,18 @@
+project_id = "fqpenmtsikdnigmswery"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+
+[functions.gemini-chat]
+verify_jwt = false
+
+[functions.analyze-medical-report]
+verify_jwt = false
+
+[functions.generate-health-image]
+verify_jwt = false
+
+[functions.parse-pdf-report]
+verify_jwt = false
